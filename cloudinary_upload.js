@@ -2,8 +2,8 @@ const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     // get the urls from cloudinary
-    const uploadURL = "https://api.cloudinary.com/v1_1/kerutman/image/upload";
-    const uploadPreset = "hcvgiane";
+    const uploadURL = "https://api.cloudinary.com/v1_1/<use yours>/image/upload";
+    const uploadPreset = "<use ur own preset :>";
 
     const uploadedImages = [];
 
