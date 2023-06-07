@@ -1,12 +1,10 @@
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    // get the urls from cloudinary
-    const uploadURL = "https://api.cloudinary.com/v1_1/<use yours>/image/upload";
-    const uploadPreset = "<use ur own preset :>";
+const upload = () => {
+  const uploadURL = "https://api.cloudinary.com/v1_1/<use yours>/image/upload";
+  const uploadPreset = "<use ur own preset :>";
 
-    const uploadedImages = [];
+  const uploadedImages = [];
 
+  try {
     for (const file of files) {
       const formData = new FormData();
       formData.append("file", file);
@@ -25,8 +23,9 @@ const handleSubmit = async (e) => {
     }
 
     console.log(uploadedImages);
+  } catch (error) {
+    console.error("An error occurred during the upload:", error);
+  }
+};
 
-    const allData = { ...data, images: uploadedImages };
-    // save everything to the mongodb
-    setLoading(false);
-  };
+
